@@ -1,4 +1,4 @@
-package com.ak.Arrays.ArrayQuestion.Sortng;
+package com.ak.Arrays.BinarySearch;
 
 import java.util.Collections;
 
