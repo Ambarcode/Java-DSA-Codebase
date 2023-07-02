@@ -1,4 +1,4 @@
-package com.ak.Arrays.BinarySearch;
+package com.ak.Arrays.ArrayQuestion;
 
 public class StockBuyAndSell {
     //we'll solve this by taking cumulative profit
