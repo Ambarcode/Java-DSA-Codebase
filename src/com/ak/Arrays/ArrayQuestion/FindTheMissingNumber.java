@@ -1,7 +1,5 @@
 package com.ak.Arrays.ArrayQuestion;
 
-import com.ak.Arrays.ArrayQuestion.Sortng.CyclicSort;
-
 public class FindTheMissingNumber {
 
     //1st Approach: Calculated the expected sum-total sum , you'll get your missing number

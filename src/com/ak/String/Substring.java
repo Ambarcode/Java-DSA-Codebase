@@ -4,31 +4,26 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Substring {
-    public static List<String> generateSubstrings(String str) {
-        List<String> substrings = new ArrayList<>();
+    private static List<List<Integer>> generateSubstring(int[] arr){
+        List<List<Integer>> outer=new ArrayList<>();
+        outer.add(new ArrayList<>());
 
-        int length = str.length();
-
-        for (int i = 0; i < length; i++) {
-            for (int j = i + 1; j <= length; j++) {
-                substrings.add(str.substring(i, j));
-            }
-        }
-
-        return substrings;
+      for(int elem: arr){
+          int n=outer.size();
+          for (int i = 0; i < n; i++) {
+              ArrayList<Integer> current =new ArrayList<>(outer.get(i));
+              current.add(elem);
+              outer.add(current);
+          }
+      }
+      return outer;
     }
-    private static void generateAllSubstring(String str){
-        for (int i = 0; i < str.length(); i++) {
-            String substr="";
-            for (int j = i; j <str.length() ; j++) {
-                substr+=str.charAt(j);
-                System.out.println(substr);
-            }
-        }
-    }
+
+    //now what happened if we encountered duplicate elements
 
     public static void main(String[] args) {
-        String input = "Pratham";
-         generateAllSubstring(input);
+        int[] arr={1,2,3};
+        List<List<Integer>> ans=generateSubstring(arr);
+        System.out.println(ans);
     }
 }

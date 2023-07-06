@@ -1,4 +1,4 @@
-package com.ak.Arrays.BinarySearch;
+package com.ak.Arrays.ArrayQuestion;
 
 import java.util.HashMap;
 

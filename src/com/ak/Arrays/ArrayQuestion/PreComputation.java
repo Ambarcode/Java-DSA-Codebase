@@ -1,4 +1,4 @@
-package com.ak.Arrays.BinarySearch;
+package com.ak.Arrays.ArrayQuestion;
 
 import java.util.Arrays;
 
@@ -14,6 +14,7 @@ public class PreComputation {
     //How to solve: we'll use PrefixSum and SuffixSum Approach
 
     //Thought Process:arr[i]=arr[i]+arr[i-1]
+    //Though this we;ll easily be able to calculate sum
 
     private static int[] prefixSum(int[] nums){
 
