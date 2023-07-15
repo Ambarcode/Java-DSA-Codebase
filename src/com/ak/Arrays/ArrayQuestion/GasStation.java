@@ -15,6 +15,7 @@ public class GasStation {
             startingPoint=i+1;
             surplus=0;
         }
+
      }
 
      if (surplus+deficit>0) return startingPoint;

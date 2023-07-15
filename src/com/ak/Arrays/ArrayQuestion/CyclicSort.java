@@ -1,4 +1,4 @@
-package com.ak.Arrays.ArrayQuestion.Sortng;
+package com.ak.Arrays.ArrayQuestion;
 
 import java.util.Arrays;
 

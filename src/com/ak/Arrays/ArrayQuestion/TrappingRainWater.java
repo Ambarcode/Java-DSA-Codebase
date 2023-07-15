@@ -2,7 +2,7 @@ package com.ak.Arrays.ArrayQuestion;
 
 public class TrappingRainWater {
     private static int maximumRainWater(int[] pillars){
-        //Intuition: For current pillar , find the pillar on right and pillar on ;eft which is equal ore greater and then subtract them and subtract the height of current pillar , you'll get the amount of water we can easily store in the region
+        //Intuition: For current pillar , find the pillar on right and pillar on left which is equal ore greater and then subtract them and subtract the height of current pillar , you'll get the amount of water we can easily store in the region
         //formula : min(tallestLest-tallestRight-xPillar)
         //we need to find the LeftTallest Pillar(Prefix Max)
         //we also need to find the rightTallestPillar(Suffix Max)

@@ -6,11 +6,12 @@ import java.util.HashMap;
 public class NoSmallerThanTheCurrentNumber {
     //Naive approach is to check for each number and count the number of elements less than it
     //however this approach is not efficient as it gives a Time Complexity of O(N^2)
-
     //Using Hashmap store the elements as key and index as pairs
     //Now maintain a copy of original array and sort the array
     //traverse the original array and for each element , look into the hashmap and store the array position with the corresponding value pair of the hashmap
     public int[] smallerNumbersThanCurrent(int[] nums) {
+        //Input: nums = [8,1,2,2,3]
+        //Output: [4,0,1,1,3]
         int[] newArr = nums.clone();
         Arrays.sort(newArr);
         HashMap<Integer, Integer> map = new HashMap<>();

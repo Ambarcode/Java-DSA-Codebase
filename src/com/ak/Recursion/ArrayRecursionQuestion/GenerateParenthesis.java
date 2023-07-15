@@ -6,7 +6,7 @@ import java.util.List;
 public class GenerateParenthesis {
     public static List<String> generateParenthesis(int n) {
         int totalParenthesis=2*n;
-        //I have two choices for each spot , either to include the left and right parenthesis and check whether we can put the parenthesis overe there or not
+        //I have two choices for each spot , either to include the left and right parenthesis and check whether we can put the parenthesis over there or not
         List<String> result=new ArrayList<>();
         generateParenthesisHelper(result , n , 0 , 0 , "");
         return result;
@@ -15,10 +15,12 @@ public class GenerateParenthesis {
     private static void generateParenthesisHelper(List<String> result , int n, int opening ,int closing , String output){
 
         if(output.length()==2*n) {result.add(output); return;}
+
+        //we can maximum put three opening brackets
         if(opening<n){
             generateParenthesisHelper(result, n , opening+1, closing , output+"(");
         }
-
+        //at least one opening bracket should be there to put a closing bracket
         if(closing<opening){
             generateParenthesisHelper(result, n, opening, closing+1, output+")");
         }

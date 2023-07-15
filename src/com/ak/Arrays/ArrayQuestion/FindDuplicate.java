@@ -25,7 +25,6 @@ public class FindDuplicate {
     private static int findDuplicate2(int[] nums){
         HashMap<Integer,Integer> map=new HashMap<>();
         for (int i = 0; i <nums.length ; i++) {
-
            if (map.containsKey(nums[i])){
                return nums[i];
            }
@@ -36,9 +35,7 @@ public class FindDuplicate {
         return -1;
     }
 
-    //Another Approach: Hare Approach , Floyd Cycle Detection(Similar to linked list cycle detection)
-
-
+    //Another Approach: Hare Approach , Floyd Cycle Detection(Linked list cycle detection)
     private static int findDuplicate3(int[] nums){
         int fast=0;
         int slow=0;
