@@ -501,7 +501,7 @@ public class Main {
             diameter=deepest+secondDeepest+2; //2 for the common node of their connection
         }
 
-        deepest+=1; //include the current one
+        deepest+=1; //include the current one also
         return deepest;
     }
 
