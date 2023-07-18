@@ -86,6 +86,9 @@ class BinaryTreeOperations {
         System.out.print(root.data+" ");
 
     }
+    void preOrderTraversal(BinaryTreeNode node){
+
+    }
 }
 
 public class BinaryTrees {
