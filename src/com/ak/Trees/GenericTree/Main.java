@@ -7,7 +7,7 @@ import java.util.*;
 public class Main {
 
 
-    public static class GenericTree implements Iterable<Iterable>{
+    public static class GenericTree implements Iterable<Integer>{
         Node root;
 
         GenericTree(Node root){
@@ -15,21 +15,52 @@ public class Main {
         }
 
         @Override
-        public Iterator<Iterable> iterator() { //loop iterator lgata h , Iterator <Iterable> khud ek Interface h
-            Iterator<Integer> obj=new GenericTreePreOrderIterator();
+        public Iterator<Integer> iterator() { //loop iterator lgata h , Iterator <Iterable> khud ek Interface h
+            Iterator<Integer> obj=new GenericTreePreOrderIterator(root);
+            return obj;
         }
     }
 
     public static class GenericTreePreOrderIterator implements Iterator<Integer>{
+        Integer nval;
+        Stack<PairForTraversal> st;
+        public GenericTreePreOrderIterator(Node root){
+            st=new Stack<>();
+            st.push(new PairForTraversal(root,-1));
+            next(); //we have to call him at least 1 to set the values;
+
+        }
 
         @Override
         public boolean hasNext() {
-            return false;
+            return nval != null;
         }
 
         @Override
         public Integer next() {
-            return null;
+           //return abhi ki value and next value set krde
+            Integer fr=nval;
+
+            //moves nval to next
+            nval=null;
+            while (!st.isEmpty()) {
+                PairForTraversal pair = st.peek();
+                if (pair.state == -1) {
+                    nval=pair.node.data;
+                    pair.state++;
+                    break;
+
+                } else if (pair.state == pair.node.children.size()) {
+                    st.pop();
+                }
+                else {
+                    PairForTraversal childPair=new PairForTraversal(pair.node.children.get(pair.state),-1 );
+                    st.push(childPair);
+                    pair.state++;
+                }
+            }
+            return fr;
+
         }
     }
     private static class Node {
@@ -615,7 +646,7 @@ public class Main {
 //            System.out.println("Max-" + max);
 //            System.out.println("Min-" + min);
 //            System.out.println("Size-" + size);
-            PreAndPostOrderTraversal(root);
+            //PreAndPostOrderTraversal(root);
 
             //now we want to execute loop on our tree
             //First we'll create a GenericTree class
@@ -628,7 +659,7 @@ public class Main {
 //            }
 
             //So I will generate the equivalent code of above three lines
-            Iterator<Iterable> gti =gt.iterator();
+            Iterator<Integer> gti =gt.iterator();
             while(gti.hasNext()){
                 System.out.println(gti.next());
             }

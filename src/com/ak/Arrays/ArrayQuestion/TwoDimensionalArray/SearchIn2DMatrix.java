@@ -51,6 +51,9 @@ public class SearchIn2DMatrix {
         }
         return new int[]{-1,-1};
     }
+
+
+
     //now look at some easy code
     private static boolean search2(int[][] nums,int target){
         if (nums.length==0) return false;

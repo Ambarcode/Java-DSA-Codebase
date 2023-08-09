@@ -4,6 +4,23 @@ import java.util.Arrays;
 
 public class RotateAnArray {
 
+    //first we'll see the bruteforce Approach
+
+    private static void solve(int[] arr){
+        int k= 3;
+        while(k>0){
+
+            int ele = arr[arr.length -1];
+            int first = arr[0];
+            arr[0]= ele;
+            for(int j =arr.length-2;j>=1;j--)
+            {
+                 arr[j+1]= arr[j];
+            }
+            arr[1]= first;
+            k--;
+        }
+    }
     //method to rotate an array to the right by k steps
     public static void rotateArray(int[] nums , int rotations){
         //Similar to the Approach of reversing a number
@@ -65,8 +82,9 @@ public class RotateAnArray {
     }
 
     public static void main(String[] args) {
-        int[] nums={10,20,30,40,50};
-        rotateArray(nums,2);
+        int[] nums={4,5,6,7,8};
+       // rotateArray(nums,2);
+        solve(nums);
         System.out.println(Arrays.toString(nums));
     }
 }

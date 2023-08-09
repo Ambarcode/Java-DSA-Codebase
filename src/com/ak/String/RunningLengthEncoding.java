@@ -1,8 +1,13 @@
 package com.ak.String;
 
+import java.util.Arrays;
+
 public class RunningLengthEncoding {
     public static void main(String[] args) {
        String str="aaaabbbccccddde";
+       char[] ch=str.toCharArray();
+        Arrays.sort(ch);
+        str= Arrays.toString(ch);
        int count=1;
 
         for (int i = 0; i <str.length()-1 ; i++) {
